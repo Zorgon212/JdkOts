@@ -1,3 +1,5 @@
+import package1.WarehouseMovements;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -16,6 +18,12 @@ public class Main {
         movements.playRecord();
 
         movements.costByName("xanax");
+        movements.removeMedicine("Minoxidil 500");
+        System.out.println("");
+        movements.playRecord();
+        movements.detailedAllStock();
+
+
 
 
 
