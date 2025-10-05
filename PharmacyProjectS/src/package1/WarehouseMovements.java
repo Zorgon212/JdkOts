@@ -10,9 +10,14 @@ public class WarehouseMovements {
     ArrayList<Double> prices = new ArrayList<Double>();
     ArrayList<Integer> stock =  new ArrayList<Integer>();
     Record record =  new Record();
+    private static int x = 0;
 
+    /* Only one WarehouseMovement object is allowed to be created
+    in order for the algorithm to function properly*/
     public WarehouseMovements(){
-
+        if (x == 1) throw new UnsupportedOperationException("You can only create one Warehouse Movement. " +
+                "Please continue working with the one that has already been created.");
+        this.x++;
     }
 
 
@@ -262,23 +267,5 @@ public class WarehouseMovements {
 
 
 
-//    public ArrayList<package1.Medicine> getMedicines() {
-//        return medicines;
-//    }
 
-    public ArrayList<String> getNames() {
-        return names;
-    }
-
-    public ArrayList<String> getCodes() {
-        return codes;
-    }
-
-    public ArrayList<Double> getPrices() {
-        return prices;
-    }
-
-    public ArrayList<Integer> getStock() {
-        return stock;
-    }
 }
