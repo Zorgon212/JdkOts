@@ -3,12 +3,7 @@
 //Only through WarehouseMovements everything can be accessed. It is the only public class.
 //All other classes cannot be accessed beyond the boundaries of the package.
 
-//code of a medicine is a String created by the number of medicines on stock, when adding the new medicine.
-//For example 00001 is the first added, 00002 the second, 000010 the tenth and so on. SO there is a limitation of up to 999999 different medicine on stock.
-//When removing from stock all the codes from that index and onwards change in order to match the list index.
 
-/*Type can be anything. Only Antibiotic, Pain Reliever or Supplement will be recognised
-* anything else will get GeneralMed type.*/
 
 //Next comment is a list with info about allowed actions.
 /*
