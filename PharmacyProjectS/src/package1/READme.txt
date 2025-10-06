@@ -1,5 +1,3 @@
-import package1.WarehouseMovements;
-
 //In order to use properly, please create only one instance of WarehouseMovements.
 //Trying to create more will result in exemption
 //Only through WarehouseMovements everything can be accessed. It is the only public class.
@@ -42,19 +40,3 @@ because it changes the positions within the arraylist
 (void) .playRecord() -> only adding, removing, restocking and using is recorded.
 This action shows everything ins the record.
 */
-public class Main {
-    public static void main(String[] args) {
-
-        WarehouseMovements movements = new WarehouseMovements();
-
-        movements.addNewMedicine("Antibiotic", "zinadol", 22);
-        
-
-
-
-
-
-
-
-    }
-}
