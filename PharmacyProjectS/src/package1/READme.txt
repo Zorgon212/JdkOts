@@ -18,8 +18,8 @@ allowed actions:
 (void) .removeMedicine(String name) <- use with caution it can change a lot of the codes
 because it changes the positions within the arraylist
 
-(void) .restock(String name, int numberOfPills)
-(void) .usePills(String name, int numberOfPills) <- only allowed to use pills you have. otherwise prints warning
+(void) .restock(String name, int numberOfPills) <- need numberOfPills > 0, otherwise does nothing
+(void) .usePills(String name, int numberOfPills) <- only allowed to use pills you have. otherwise prints warning. need numberOfPills > 0, otherwise does nothing
 
 (void) .checkAvailabilityByName(String name)
 (void) .checkAvailabilityByCode(String code)
