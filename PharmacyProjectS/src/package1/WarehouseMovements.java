@@ -88,36 +88,39 @@ public class WarehouseMovements {
     }
 
     public void restock(String name, int numberOfPills){
-
-        String nameL = name.replace(" ", "").toLowerCase();
-        int index = names.indexOf(nameL);
-        switch (index) {
-            case -1:
-                System.out.println("Medicine not found.");
-                break;
-            default:
-                stock.set(index, stock.get(index) + numberOfPills);
-                record.recordMov("restock", name, numberOfPills);
+        if (numberOfPills > 0) {
+            String nameL = name.replace(" ", "").toLowerCase();
+            int index = names.indexOf(nameL);
+            switch (index) {
+                case -1:
+                    System.out.println("Medicine not found.");
+                    break;
+                default:
+                    stock.set(index, stock.get(index) + numberOfPills);
+                    record.recordMov("restock", name, numberOfPills);
+            }
         }
     }
     public void usePills(String name, int numberOfPills) {
 
         String nameL = name.replace(" ", "").toLowerCase();
         int index = names.indexOf(nameL);
-        switch (index) {
-            case -1:
-                System.out.println("Medicine not found.");
-                break;
-            default:
-                if (stock.get(index) - numberOfPills >= 0) {
-                    stock.set(index, stock.get(index) - numberOfPills);
-                    record.recordMov("outbound", name, numberOfPills);
-                } else {
-                    System.out.println("Pills not enough");
-                    System.out.println("No movement was completed");
-                    System.out.println("Please consider restocking with the .restock(name, numberOfPills) function");
-                    record.recordMov("unable to fulfil outbound", name, 0);
-                }
+        if(numberOfPills > 0) {
+            switch (index) {
+                case -1:
+                    System.out.println("Medicine not found.");
+                    break;
+                default:
+                    if (stock.get(index) - numberOfPills >= 0) {
+                        stock.set(index, stock.get(index) - numberOfPills);
+                        record.recordMov("outbound", name, numberOfPills);
+                    } else {
+                        System.out.println("Pills not enough");
+                        System.out.println("No movement was completed");
+                        System.out.println("Please consider restocking with the .restock(name, numberOfPills) function");
+                        record.recordMov("unable to fulfil outbound", name, 0);
+                    }
+            }
         }
     }
 
